@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MadMakers - Pack de Diseños Grafico (canva y photoshop)</title>
+    <title>MadMakers - Pack de Diseños Canva</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -62,9 +62,11 @@
             box-shadow: 0 0 25px rgba(0, 229, 168, 0.4);
         }
     </style>
+    </style>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
 
-<body class="bg-page text-txt-primary leading-relaxed">
+<body class="bg-page text-txt-primary leading-relaxed" x-data="promoModal()">
 
     <!-- HERO SECTION -->
     <header class="relative bg-page overflow-hidden border-b border-card">
@@ -350,7 +352,7 @@
                 </p>
             </div>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-6">
                 <!-- GIF 01 -->
                 <div
                     class="group relative rounded-xl overflow-hidden bg-card border border-gray-800 hover:border-accent transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,229,168,0.1)]">
@@ -801,6 +803,135 @@
         </div>
     </footer>
 
+    <!-- PROMO MODAL -->
+    <div x-show="showModal" x-transition:enter="transition ease-out duration-300"
+        x-transition:enter-start="opacity-0 translate-y-4" x-transition:enter-end="opacity-100 translate-y-0"
+        x-transition:leave="transition ease-in duration-200" x-transition:leave-start="opacity-100 translate-y-0"
+        x-transition:leave-end="opacity-0 translate-y-4"
+        class="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6" style="display: none;">
+
+        <!-- Backdrop -->
+        <div class="absolute inset-0 bg-black/80 backdrop-blur-sm" @click="showModal = false"></div>
+
+        <!-- Modal Content -->
+        <div
+            class="relative bg-card border-2 border-accent rounded-2xl shadow-[0_0_50px_rgba(0,229,168,0.3)] max-w-lg w-full overflow-hidden">
+            <!-- Close Button -->
+            <button @click="showModal = false"
+                class="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors z-10">
+                <i class="fas fa-times text-xl"></i>
+            </button>
+
+            <!-- Header / Image Area -->
+            <div class="bg-gradient-to-r from-pink-600 to-purple-600 p-6 text-center relative overflow-hidden">
+                <div
+                    class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-20">
+                </div>
+                <div class="relative z-10">
+                    <span
+                        class="inline-block bg-white text-pink-600 font-bold px-3 py-1 rounded-full text-xs uppercase tracking-wider mb-2 animate-pulse">
+                        💘 Oferta Flash San Valentín
+                    </span>
+                    <h3 class="text-2xl font-black text-white leading-tight">
+                        ¡LLEVATE EL SUPERCOMBO<br>DE NOVIOS GRATIS!
+                    </h3>
+                </div>
+            </div>
+
+            <!-- Body -->
+            <div class="p-6 md:p-8 text-center">
+                <p class="text-gray-300 mb-6 text-lg">
+                    Adquiriendo el Pack MadMakers hoy, recibís de regalo el <span class="text-accent font-bold">Pack
+                        Editable para Parejas</span>. ¡Todo por el mismo precio!
+                </p>
+
+                <!-- Countdown -->
+                <div class="flex justify-center gap-4 mb-8">
+                    <div class="flex flex-col items-center">
+                        <div
+                            class="bg-page border border-gray-700 rounded-lg p-3 w-16 h-16 flex items-center justify-center shadow-inner">
+                            <span class="text-2xl font-mono font-bold text-white" x-text="format(timer.h)">00</span>
+                        </div>
+                        <span class="text-xs text-gray-500 mt-1 uppercase">Hs</span>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div
+                            class="bg-page border border-gray-700 rounded-lg p-3 w-16 h-16 flex items-center justify-center shadow-inner">
+                            <span class="text-2xl font-mono font-bold text-white" x-text="format(timer.m)">00</span>
+                        </div>
+                        <span class="text-xs text-gray-500 mt-1 uppercase">Min</span>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div
+                            class="bg-page border border-gray-700 rounded-lg p-3 w-16 h-16 flex items-center justify-center shadow-inner">
+                            <span class="text-2xl font-mono font-bold text-accent animate-pulse"
+                                x-text="format(timer.s)">00</span>
+                        </div>
+                        <span class="text-xs text-gray-500 mt-1 uppercase">Seg</span>
+                    </div>
+                </div>
+
+                <a href="#oferta" @click="showModal = false"
+                    class="block w-full bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-white font-bold py-4 rounded-xl shadow-lg transform transition hover:scale-[1.02] text-xl">
+                    <i class="fas fa-gift mr-2"></i> ¡QUIERO MI REGALO YA!
+                </a>
+
+                <p class="mt-4 text-xs text-gray-500">
+                    *Oferta limitada a las primeras 50 compras del día.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function promoModal() {
+            return {
+                showModal: false,
+                timer: {
+                    h: 4,
+                    m: 14,
+                    s: 59
+                },
+                interval: null,
+
+                init() {
+                    // Show modal after 30 seconds
+                    setTimeout(() => {
+                        this.showModal = true;
+                    }, 15000);
+
+                    // Start timer
+                    this.startTimer();
+                },
+
+                startTimer() {
+                    this.interval = setInterval(() => {
+                        if (this.timer.s > 0) {
+                            this.timer.s--;
+                        } else {
+                            if (this.timer.m > 0) {
+                                this.timer.m--;
+                                this.timer.s = 59;
+                            } else {
+                                if (this.timer.h > 0) {
+                                    this.timer.h--;
+                                    this.timer.m = 59;
+                                    this.timer.s = 59;
+                                } else {
+                                    // Timer finished, reset or stop
+                                    this.timer = { h: 4, m: 14, s: 59 }; // Loop for demo
+                                }
+                            }
+                        }
+                    }, 1000);
+                },
+
+                format(num) {
+                    return num.toString().padStart(2, '0');
+                }
+            }
+        }
+    </script>
 </body>
 
 </html>
