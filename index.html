@@ -1,778 +1,806 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pack de Diseño Profesional para Canva | Todo lo que tu negocio necesita</title>
-    <meta name="description" content="Plantillas profesionales listas para usar en Canva. Ahorrá tiempo y dinero en diseño. Entrega inmediata.">
+    <title>MadMakers - Pack de Diseños Canva</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        page: '#0E1117',      // Background
+                        card: '#161B22',      // Sections/Cards
+                        txt: {
+                            primary: '#E6EDF3',   // Main Text
+                            secondary: '#9BA4B5', // Secondary Text
+                        },
+                        accent: {
+                            DEFAULT: '#00E5A8',   // Mint/Neon (CTA)
+                            secondary: '#7C7CFF', // Violet (Details)
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    animation: {
+                        scroll: 'scroll 20s linear infinite',
+                    },
+                    keyframes: {
+                        scroll: {
+                            '0%': { transform: 'translateX(0)' },
+                            '100%': { transform: 'translateX(-50%)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
     <style>
-        * {
+        body {
             font-family: 'Inter', sans-serif;
         }
-        h1, h2, h3, .font-display {
-            font-family: 'Poppins', sans-serif;
-        }
+
         .gradient-text {
-            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+            background: linear-gradient(135deg, #00E5A8 0%, #7C7CFF 100%);
             -webkit-background-clip: text;
+            background-clip: text;
             -webkit-text-fill-color: transparent;
         }
-        .hero-gradient {
-            background: linear-gradient(180deg, #fafafa 0%, #f3f4f6 100%);
+
+        .cta-button {
+            transition: all 0.3s ease;
+            box-shadow: 0 0 15px rgba(0, 229, 168, 0.2);
         }
-        .cta-pulse {
-            animation: pulse-glow 2s infinite;
-        }
-        @keyframes pulse-glow {
-            0%, 100% { box-shadow: 0 0 0 0 rgba(99, 102, 241, 0.4); }
-            50% { box-shadow: 0 0 20px 10px rgba(99, 102, 241, 0.2); }
-        }
-        .float-animation {
-            animation: float 6s ease-in-out infinite;
-        }
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-        }
-        .check-icon {
-            color: #10b981;
-        }
-        .sticky-cta {
-            transform: translateY(100%);
-            transition: transform 0.3s ease;
-        }
-        .sticky-cta.visible {
-            transform: translateY(0);
-        }
-        .countdown-number {
-            font-variant-numeric: tabular-nums;
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0 25px rgba(0, 229, 168, 0.4);
         }
     </style>
-    <!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '2089970191768809');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=2089970191768809&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code v2-->
 </head>
-<body class="bg-white text-gray-900 antialiased">
 
-    <!-- Sticky CTA (appears on scroll) -->
-    <div id="stickyCta" class="sticky-cta fixed bottom-0 left-0 right-0 bg-white/95 backdrop-blur-md border-t border-gray-200 p-4 z-50 md:hidden">
-        <a href="#comprar" class="block w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 px-6 rounded-xl text-center transition-all">
-            QUIERO EL PACK AHORA →
-        </a>
-    </div>
+<body class="bg-page text-txt-primary leading-relaxed">
 
-    <!-- Navigation -->
-    <nav class="fixed top-0 left-0 right-0 bg-white/90 backdrop-blur-md border-b border-gray-100 z-40">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <div class="flex items-center gap-2">
-                    <i data-lucide="palette" class="w-6 h-6 text-indigo-600"></i>
-                    <span class="font-display font-bold text-xl">Canva<span class="text-indigo-600">Pro</span>Pack</span>
-                </div>
-                <a href="#comprar" class="hidden md:inline-flex bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-2 px-5 rounded-lg transition-all text-sm">
-                    Comprar Ahora
-                </a>
-            </div>
-        </div>
-    </nav>
+    <!-- HERO SECTION -->
+    <header class="relative bg-page overflow-hidden border-b border-card">
+        <div class="max-w-7xl mx-auto">
+            <div class="relative z-10 pb-8 bg-page sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32">
+                <!-- Diagonal Shape -->
+                <svg class="hidden lg:block absolute right-0 inset-y-0 h-full w-48 text-page transform translate-x-1/2"
+                    fill="currentColor" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+                    <polygon points="50,0 100,0 50,100 0,100" />
+                </svg>
 
-    <!-- Hero Section -->
-    <section class="hero-gradient pt-24 pb-16 md:pt-32 md:pb-24">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div class="order-2 md:order-1">
-                    <div class="inline-flex items-center gap-2 bg-indigo-100 text-indigo-700 px-4 py-2 rounded-full text-sm font-medium mb-6">
-                        <i data-lucide="sparkles" class="w-4 h-4"></i>
-                        Más de 2,500 emprendedores ya lo usan
-                    </div>
-                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-                        Todo el diseño que tu negocio necesita, 
-                        <span class="gradient-text">listo para usar en Canva</span>
-                    </h1>
-                    <p class="text-lg md:text-xl text-gray-600 mb-8 leading-relaxed">
-                        Ahorrá tiempo, dinero y esfuerzo con plantillas profesionales que podés editar en minutos. Sin saber diseño.
-                    </p>
-                    <div class="flex flex-col sm:flex-row gap-4">
-                        <a href="#comprar" class="cta-pulse inline-flex items-center justify-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-4 px-8 rounded-xl text-lg transition-all transform hover:scale-105">
-                            ACCEDER AL PACK AHORA
-                            <i data-lucide="arrow-right" class="w-5 h-5"></i>
-                        </a>
-                        <a href="#incluye" class="inline-flex items-center justify-center gap-2 bg-white hover:bg-gray-50 text-gray-700 font-semibold py-4 px-8 rounded-xl text-lg border-2 border-gray-200 transition-all">
-                            Ver qué incluye
-                        </a>
-                    </div>
-                    <div class="flex items-center gap-6 mt-8 text-sm text-gray-500">
-                        <div class="flex items-center gap-2">
-                            <i data-lucide="check-circle" class="w-5 h-5 text-green-500"></i>
-                            Entrega inmediata
-                        </div>
-                        <div class="flex items-center gap-2">
-                            <i data-lucide="check-circle" class="w-5 h-5 text-green-500"></i>
-                            100% editable
-                        </div>
-                        <div class="flex items-center gap-2">
-                            <i data-lucide="check-circle" class="w-5 h-5 text-green-500"></i>
-                            Uso comercial
-                        </div>
-                    </div>
-                </div>
-                <div class="order-1 md:order-2">
-                    <div class="relative">
-                        <div class="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-3xl blur-3xl opacity-20"></div>
-                        <div class="relative float-animation">
-                            <img src="https://i.ibb.co/0LdtkCK/canvav1.png" alt="Pack de diseño Canva" class="rounded-2xl shadow-2xl w-full">
-                            <div class="absolute -bottom-4 -right-4 bg-white rounded-xl shadow-lg p-4">
-                                <div class="flex items-center gap-3">
-                                    <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
-                                        <i data-lucide="download" class="w-6 h-6 text-green-600"></i>
-                                    </div>
-                                    <div>
-                                        <p class="font-bold text-gray-900">Descarga inmediata</p>
-                                        <p class="text-sm text-gray-500">PDF con acceso directo</p>
-                                    </div>
-                                </div>
+                <main class="mt-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
+                    <div class="sm:text-center lg:text-left">
+                        <span
+                            class="inline-block py-1 px-3 rounded-full bg-card text-accent-secondary text-xs font-semibold tracking-wide uppercase mb-4 border border-card">
+                            🔥 Para Emprendedores y Creadores
+                        </span>
+                        <h1 class="text-4xl tracking-tight font-extrabold text-white sm:text-5xl md:text-6xl">
+                            <span class="block xl:inline">Diseñá contenido profesional</span>
+                            <span class="block gradient-text">en minutos, incluso sin experiencia</span>
+                        </h1>
+                        <p
+                            class="mt-3 text-base text-txt-secondary sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
+                            El pack definitivo de plantillas editables en Canva. Olvidate de pasar horas frente a la
+                            pantalla en blanco. Creá, publicá y vendé más con diseños que impactan.
+                        </p>
+                        <div class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
+                            <div class="rounded-md shadow">
+                                <a href="#que-incluye"
+                                    class="cta-button w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-page bg-accent hover:bg-opacity-90 md:py-4 md:text-lg md:px-10 font-bold">
+                                    Ver lo que incluye
+                                </a>
                             </div>
                         </div>
                     </div>
-                </div>
+                </main>
             </div>
+        </div>
+
+        <div class="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2 bg-card flex items-center justify-center p-8 lg:p-12">
+            <img class="h-60 w-auto object-contain sm:h-70 md:h-80 lg:h-4/5 opacity-90"
+                src="https://i.postimg.cc/Yq4fyYSg/8b9d84d9034ea59e91227d4c07386bca.png"
+                alt="Vista Previa MadMakers Pack">
+        </div>
+
+    </header>
+
+    <!-- PAIN POINTS / TRANSITION -->
+    <section class="py-12 bg-page border-b border-card">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-2xl font-bold text-white">¿Cansado de perder tiempo diseñando sin ver resultados?</h2>
+            <p class="mt-4 text-lg text-txt-secondary max-w-2xl mx-auto">
+                No necesitás ser diseñador gráfico para tener un feed increíble. Solo necesitás las herramientas
+                correctas.
+            </p>
         </div>
     </section>
 
-    <!-- Logos/Trust -->
-    <section class="py-12 bg-white border-b border-gray-100">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <p class="text-center text-gray-400 text-sm font-medium mb-8 uppercase tracking-wide">Usado por emprendedores de</p>
-            <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-50">
-                <div class="flex items-center gap-2 text-xl font-bold text-gray-400">
-                    <i data-lucide="shopping-bag" class="w-6 h-6"></i>
-                    E-commerce
-                </div>
-                <div class="flex items-center gap-2 text-xl font-bold text-gray-400">
-                    <i data-lucide="video" class="w-6 h-6"></i>
-                    Creadores
-                </div>
-                <div class="flex items-center gap-2 text-xl font-bold text-gray-400">
-                    <i data-lucide="briefcase" class="w-6 h-6"></i>
-                    Agencias
-                </div>
-                <div class="flex items-center gap-2 text-xl font-bold text-gray-400">
-                    <i data-lucide="heart" class="w-6 h-6"></i>
-                    Coaches
-                </div>
-                <div class="flex items-center gap-2 text-xl font-bold text-gray-400">
-                    <i data-lucide="coffee" class="w-6 h-6"></i>
-                    Negocios locales
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Problem → Solution -->
-    <section class="py-16 md:py-24 bg-gray-50">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <span class="inline-block bg-red-100 text-red-600 px-4 py-2 rounded-full text-sm font-semibold mb-4">¿TE SUENA FAMILIAR?</span>
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900">¿Te pasa esto?</h2>
-            </div>
-            
-            <div class="grid md:grid-cols-3 gap-6 mb-12">
-                <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
-                    <div class="w-14 h-14 bg-red-100 rounded-xl flex items-center justify-center mb-4">
-                        <i data-lucide="frown" class="w-7 h-7 text-red-500"></i>
-                    </div>
-                    <h3 class="font-semibold text-gray-900 mb-2">No sabés diseñar</h3>
-                    <p class="text-gray-600 text-sm">Pero necesitás vender y tu imagen no transmite profesionalismo</p>
-                </div>
-                <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
-                    <div class="w-14 h-14 bg-orange-100 rounded-xl flex items-center justify-center mb-4">
-                        <i data-lucide="clock" class="w-7 h-7 text-orange-500"></i>
-                    </div>
-                    <h3 class="font-semibold text-gray-900 mb-2">Perdés horas</h3>
-                    <p class="text-gray-600 text-sm">Creando contenido desde cero que nunca te convence del todo</p>
-                </div>
-                <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
-                    <div class="w-14 h-14 bg-yellow-100 rounded-xl flex items-center justify-center mb-4">
-                        <i data-lucide="wallet" class="w-7 h-7 text-yellow-600"></i>
-                    </div>
-                    <h3 class="font-semibold text-gray-900 mb-2">Pagás diseñadores</h3>
-                    <p class="text-gray-600 text-sm">Constantemente por cada post, historia o flyer que necesitás</p>
-                </div>
-            </div>
-
-            <div class="relative">
-                <div class="absolute inset-0 flex items-center">
-                    <div class="w-full border-t border-gray-200"></div>
-                </div>
-                <div class="relative flex justify-center">
-                    <span class="bg-gray-50 px-4 text-2xl">↓</span>
-                </div>
-            </div>
-
-            <div class="mt-12 text-center">
-                <div class="inline-block bg-indigo-600 text-white rounded-2xl p-8 md:p-12">
-                    <i data-lucide="check-circle-2" class="w-16 h-16 mx-auto mb-6 text-indigo-200"></i>
-                    <h3 class="text-2xl md:text-3xl font-bold mb-4">Este pack fue creado para resolver eso desde hoy</h3>
-                    <p class="text-indigo-100 text-lg">Diseños profesionales listos para editar en Canva, sin experiencia previa.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- What Includes -->
-    <section id="incluye" class="py-16 md:py-24 bg-white">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">¿Qué incluye el pack?</h2>
-                <p class="text-lg text-gray-600">Todo lo que necesitás para crear contenido profesional</p>
-            </div>
-
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Item 1 -->
-                <div class="group hover:shadow-xl transition-all duration-300 bg-gray-50 rounded-2xl p-6 border border-gray-100">
-                    <div class="w-14 h-14 bg-indigo-100 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                        <i data-lucide="instagram" class="w-7 h-7 text-indigo-600"></i>
-                    </div>
-                    <h3 class="font-bold text-lg text-gray-900 mb-2">Plantillas para redes sociales</h3>
-                    <p class="text-gray-600 text-sm mb-3">Posts optimizados para Instagram, Facebook y LinkedIn</p>
-                    <span class="text-indigo-600 font-semibold text-sm">+300 diseños</span>
-                </div>
-
-                <!-- Item 2 -->
-                <div class="group hover:shadow-xl transition-all duration-300 bg-gray-50 rounded-2xl p-6 border border-gray-100">
-                    <div class="w-14 h-14 bg-pink-100 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                        <i data-lucide="sparkles" class="w-7 h-7 text-pink-600"></i>
-                    </div>
-                    <h3 class="font-bold text-lg text-gray-900 mb-2">Stories editables</h3>
-                    <p class="text-gray-600 text-sm mb-3">Historias animadas y estáticas para destacar</p>
-                    <span class="text-pink-600 font-semibold text-sm">+200 stories</span>
-                </div>
-
-                <!-- Item 3 -->
-                <div class="group hover:shadow-xl transition-all duration-300 bg-gray-50 rounded-2xl p-6 border border-gray-100">
-                    <div class="w-14 h-14 bg-purple-100 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                        <i data-lucide="megaphone" class="w-7 h-7 text-purple-600"></i>
-                    </div>
-                    <h3 class="font-bold text-lg text-gray-900 mb-2">Flyers promocionales</h3>
-                    <p class="text-gray-600 text-sm mb-3">Diseños para promos, descuentos y ofertas</p>
-                    <span class="text-purple-600 font-semibold text-sm">+100 flyers</span>
-                </div>
-
-                <!-- Item 4 -->
-                <div class="group hover:shadow-xl transition-all duration-300 bg-gray-50 rounded-2xl p-6 border border-gray-100">
-                    <div class="w-14 h-14 bg-green-100 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                        <i data-lucide="rocket" class="w-7 h-7 text-green-600"></i>
-                    </div>
-                    <h3 class="font-bold text-lg text-gray-900 mb-2">Diseños para lanzamientos</h3>
-                    <p class="text-gray-600 text-sm mb-3">Secuencias completas para vender tu producto</p>
-                    <span class="text-green-600 font-semibold text-sm">+150 templates</span>
-                </div>
-
-                <!-- Item 5 -->
-                <div class="group hover:shadow-xl transition-all duration-300 bg-gray-50 rounded-2xl p-6 border border-gray-100">
-                    <div class="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                        <i data-lucide="credit-card" class="w-7 h-7 text-blue-600"></i>
-                    </div>
-                    <h3 class="font-bold text-lg text-gray-900 mb-2">Tarjetas de presentación</h3>
-                    <p class="text-gray-600 text-sm mb-3">Digitales y para imprimir, profesionales</p>
-                    <span class="text-blue-600 font-semibold text-sm">+110 diseños</span>
-                </div>
-
-                <!-- Item 6 -->
-                <div class="group hover:shadow-xl transition-all duration-300 bg-gray-50 rounded-2xl p-6 border border-gray-100">
-                    <div class="w-14 h-14 bg-amber-100 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                        <i data-lucide="package" class="w-7 h-7 text-amber-600"></i>
-                    </div>
-                    <h3 class="font-bold text-lg text-gray-900 mb-2">Recursos gráficos</h3>
-                    <p class="text-gray-600 text-sm mb-3">Iconos, ilustraciones, paletas y tipografías</p>
-                    <span class="text-amber-600 font-semibold text-sm">+500 elementos</span>
-                </div>
-            </div>
-
-            <!-- Total value -->
-            <div class="mt-12 text-center">
-                <div class="inline-flex items-center gap-4 bg-gray-900 text-white rounded-2xl px-8 py-4">
-                    <i data-lucide="gift" class="w-8 h-8 text-yellow-400"></i>
-                    <div class="text-left">
-                        <p class="text-sm text-gray-400">Valor total del contenido</p>
-                        <p class="text-2xl font-bold">+860 diseños profesionales</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- How it Works -->
-    <section class="py-16 md:py-24 bg-indigo-600">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">¿Cómo funciona?</h2>
-                <p class="text-indigo-200 text-lg">En menos de 5 minutos ya estás diseñando</p>
-            </div>
-
-            <div class="grid md:grid-cols-4 gap-8">
-                <div class="text-center">
-                    <div class="w-20 h-20 bg-white/10 rounded-2xl flex items-center justify-center mx-auto mb-4 backdrop-blur">
-                        <span class="text-3xl font-bold text-white">1</span>
-                    </div>
-                    <h3 class="font-bold text-white mb-2">Comprás el pack</h3>
-                    <p class="text-indigo-200 text-sm">Proceso seguro y rápido</p>
-                </div>
-                <div class="text-center">
-                    <div class="w-20 h-20 bg-white/10 rounded-2xl flex items-center justify-center mx-auto mb-4 backdrop-blur">
-                        <span class="text-3xl font-bold text-white">2</span>
-                    </div>
-                    <h3 class="font-bold text-white mb-2">Accedés al PDF</h3>
-                    <p class="text-indigo-200 text-sm">Descarga inmediata</p>
-                </div>
-                <div class="text-center">
-                    <div class="w-20 h-20 bg-white/10 rounded-2xl flex items-center justify-center mx-auto mb-4 backdrop-blur">
-                        <span class="text-3xl font-bold text-white">3</span>
-                    </div>
-                    <h3 class="font-bold text-white mb-2">Hacés clic</h3>
-                    <p class="text-indigo-200 text-sm">Botones con acceso directo</p>
-                </div>
-                <div class="text-center">
-                    <div class="w-20 h-20 bg-white/10 rounded-2xl flex items-center justify-center mx-auto mb-4 backdrop-blur">
-                        <span class="text-3xl font-bold text-white">4</span>
-                    </div>
-                    <h3 class="font-bold text-white mb-2">Editás en Canva</h3>
-                    <p class="text-indigo-200 text-sm">Todo listo para usar</p>
-                </div>
-            </div>
-
-            <div class="mt-12 text-center">
-                <div class="inline-flex items-center gap-3 bg-white/10 backdrop-blur rounded-xl px-6 py-3">
-                    <i data-lucide="info" class="w-5 h-5 text-indigo-200"></i>
-                    <p class="text-indigo-100">No necesitás experiencia previa ni Canva Pro</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Benefits -->
-    <section class="py-16 md:py-24 bg-white">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div>
-                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">¿Por qué este pack cambiará tu negocio?</h2>
-                    
-                    <div class="space-y-6">
-                        <div class="flex gap-4">
-                            <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                                <i data-lucide="timer" class="w-6 h-6 text-green-600"></i>
-                            </div>
-                            <div>
-                                <h3 class="font-bold text-gray-900 mb-1">Ahorrás tiempo</h3>
-                                <p class="text-gray-600">Creá contenido profesional en minutos, no en horas. Diseños listos para usar.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="flex gap-4">
-                            <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                                <i data-lucide="piggy-bank" class="w-6 h-6 text-blue-600"></i>
-                            </div>
-                            <div>
-                                <h3 class="font-bold text-gray-900 mb-1">Ahorrás dinero</h3>
-                                <p class="text-gray-600">Una inversión única vs. pagar diseñadores mes a mes. Se paga solo con un diseño.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="flex gap-4">
-                            <div class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                                <i data-lucide="award" class="w-6 h-6 text-purple-600"></i>
-                            </div>
-                            <div>
-                                <h3 class="font-bold text-gray-900 mb-1">Diseños profesionales</h3>
-                                <p class="text-gray-600">Creados por diseñadores expertos. Tu marca va a lucir como nunca.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="flex gap-4">
-                            <div class="w-12 h-12 bg-pink-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                                <i data-lucide="edit-3" class="w-6 h-6 text-pink-600"></i>
-                            </div>
-                            <div>
-                                <h3 class="font-bold text-gray-900 mb-1">100% editables</h3>
-                                <p class="text-gray-600">Colores, textos, imágenes. Todo se adapta a tu marca en clicks.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="flex gap-4">
-                            <div class="w-12 h-12 bg-amber-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                                <i data-lucide="briefcase" class="w-6 h-6 text-amber-600"></i>
-                            </div>
-                            <div>
-                                <h3 class="font-bold text-gray-900 mb-1">Uso comercial permitido</h3>
-                                <p class="text-gray-600">Usalos para vos y tus clientes. Sin límites de uso.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="relative">
-                    <div class="absolute inset-0 bg-gradient-to-br from-indigo-500 to-purple-500 rounded-3xl blur-3xl opacity-10"></div>
-                    <img src="http://static.photos/technology/640x480/88" alt="Edición en Canva" class="relative rounded-2xl shadow-2xl w-full">
-                    
-                    <!-- Floating badge -->
-                    <div class="absolute -bottom-6 -left-6 bg-white rounded-xl shadow-xl p-4">
-                        <div class="flex items-center gap-3">
-                            <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">
-                                <i data-lucide="check" class="w-5 h-5 text-green-600"></i>
-                            </div>
-                            <div>
-                                <p class="font-bold text-gray-900 text-sm">Compatible con</p>
-                                <p class="text-indigo-600 font-bold">Canva Free</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Who is it for -->
-    <section class="py-16 md:py-24 bg-gray-50">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">¿Para quién es este producto?</h2>
-                <p class="text-lg text-gray-600">Diseñado pensando en vos</p>
-            </div>
-
-            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="bg-white rounded-2xl p-6 text-center shadow-sm hover:shadow-lg transition-shadow">
-                    <div class="w-16 h-16 bg-indigo-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                        <i data-lucide="user" class="w-8 h-8 text-indigo-600"></i>
-                    </div>
-                    <h3 class="font-bold text-gray-900 mb-2">Emprendedores</h3>
-                    <p class="text-gray-600 text-sm">Que quieren vender más con mejor imagen</p>
-                </div>
-                
-                <div class="bg-white rounded-2xl p-6 text-center shadow-sm hover:shadow-lg transition-shadow">
-                    <div class="w-16 h-16 bg-pink-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                        <i data-lucide="monitor" class="w-8 h-8 text-pink-600"></i>
-                    </div>
-                    <h3 class="font-bold text-gray-900 mb-2">Negocios digitales</h3>
-                    <p class="text-gray-600 text-sm">Que necesitan contenido constante</p>
-                </div>
-                
-                <div class="bg-white rounded-2xl p-6 text-center shadow-sm hover:shadow-lg transition-shadow">
-                    <div class="w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                        <i data-lucide="users" class="w-8 h-8 text-green-600"></i>
-                    </div>
-                    <h3 class="font-bold text-gray-900 mb-2">Community Managers</h3>
-                    <p class="text-gray-600 text-sm">Que gestionan varias cuentas</p>
-                </div>
-                
-                <div class="bg-white rounded-2xl p-6 text-center shadow-sm hover:shadow-lg transition-shadow">
-                    <div class="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                        <i data-lucide="video" class="w-8 h-8 text-purple-600"></i>
-                    </div>
-                    <h3 class="font-bold text-gray-900 mb-2">Creadores de contenido</h3>
-                    <p class="text-gray-600 text-sm">Que quieren destacar en redes</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Trust / Guarantee -->
-    <section class="py-16 md:py-24 bg-white">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="bg-gradient-to-br from-gray-900 to-gray-800 rounded-3xl p-8 md:p-12">
-                <div class="grid md:grid-cols-2 gap-12 items-center">
-                    <div>
-                        <h2 class="text-3xl font-bold text-white mb-6">Tu compra está 100% asegurada</h2>
-                        
-                        <div class="space-y-4">
-                            <div class="flex items-center gap-3">
-                                <i data-lucide="zap" class="w-6 h-6 text-yellow-400"></i>
-                                <span class="text-gray-200">Entrega inmediata por email</span>
-                            </div>
-                            <div class="flex items-center gap-3">
-                                <i data-lucide="smartphone" class="w-6 h-6 text-green-400"></i>
-                                <span class="text-gray-200">Acceso digital desde cualquier dispositivo</span>
-                            </div>
-                            <div class="flex items-center gap-3">
-                                <i data-lucide="check-circle" class="w-6 h-6 text-blue-400"></i>
-                                <span class="text-gray-200">Compatible con Canva Free y Pro</span>
-                            </div>
-                            <div class="flex items-center gap-3">
-                                <i data-lucide="headphones" class="w-6 h-6 text-pink-400"></i>
-                                <span class="text-gray-200">Soporte básico incluido</span>
-                            </div>
-                            <div class="flex items-center gap-3">
-                                <i data-lucide="refresh-cw" class="w-6 h-6 text-indigo-400"></i>
-                                <span class="text-gray-200">Actualizaciones de por vida</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="text-center md:text-right">
-                        <div class="inline-block bg-white/10 backdrop-blur rounded-2xl p-8">
-                            <i data-lucide="shield-check" class="w-20 h-20 mx-auto mb-4 text-green-400"></i>
-                            <p class="text-2xl font-bold text-white mb-2">Garantía de satisfacción</p>
-                            <p class="text-gray-300">Si no te gusta, te devolvemos tu dinero. Sin preguntas.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Social Proof -->
-    <section class="py-16 md:py-24 bg-gray-50">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Lo que dicen quienes ya lo usan</h2>
-                <div class="flex items-center justify-center gap-2">
-                    <div class="flex">
-                        <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-yellow-400"></i>
-                        <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-yellow-400"></i>
-                        <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-yellow-400"></i>
-                        <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-yellow-400"></i>
-                        <i data-lucide="star" class="w-5 h-5 text-yellow-400 fill-yellow-400"></i>
-                    </div>
-                    <span class="text-gray-600">4.9/5 basado en 300+ opiniones</span>
-                </div>
-            </div>
-
-            <div class="grid md:grid-cols-3 gap-6">
-                <div class="bg-white rounded-2xl p-6 shadow-sm">
-                    <div class="flex items-center gap-3 mb-4">
-                        <img src="http://static.photos/people/100x100/15" alt="María" class="w-12 h-12 rounded-full object-cover">
-                        <div>
-                            <p class="font-bold text-gray-900">María G.</p>
-                            <p class="text-sm text-gray-500">Emprendedora</p>
-                        </div>
-                    </div>
-                    <p class="text-gray-600">"Pasé de tardar 3 horas en un post a hacerlo en 15 minutos. Mis ventas aumentaron un 40% desde que empecé a usar las plantillas."</p>
-                </div>
-                
-                <div class="bg-white rounded-2xl p-6 shadow-sm">
-                    <div class="flex items-center gap-3 mb-4">
-                        <img src="http://static.photos/people/100x100/23" alt="Carlos" class="w-12 h-12 rounded-full object-cover">
-                        <div>
-                            <p class="font-bold text-gray-900">Carlos R.</p>
-                            <p class="text-sm text-gray-500">Community Manager</p>
-                        </div>
-                    </div>
-                    <p class="text-gray-600">"Gestiono 8 cuentas y este pack me salvó la vida. La variedad de diseños es increíble y todos se ven profesionales."</p>
-                </div>
-                
-                <div class="bg-white rounded-2xl p-6 shadow-sm">
-                    <div class="flex items-center gap-3 mb-4">
-                        <img src="http://static.photos/people/100x100/31" alt="Lucía" class="w-12 h-12 rounded-full object-cover">
-                        <div>
-                            <p class="font-bold text-gray-900">Lucía M.</p>
-                            <p class="text-sm text-gray-500">Coach online</p>
-                        </div>
-                    </div>
-                    <p class="text-gray-600">"Por fin pude lanzar mi curso con una imagen profesional. Las plantillas de lanzamiento son oro puro. 100% recomendado."</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Final CTA -->
-    <section id="comprar" class="py-16 md:py-24 bg-indigo-600 relative overflow-hidden">
-        <div class="absolute inset-0">
-            <div class="absolute inset-0 bg-gradient-to-br from-indigo-600 to-purple-700"></div>
-            <div class="absolute top-0 left-0 w-full h-full opacity-10">
-                <div class="absolute top-10 left-10 w-32 h-32 bg-white rounded-full blur-3xl"></div>
-                <div class="absolute bottom-10 right-10 w-48 h-48 bg-pink-400 rounded-full blur-3xl"></div>
-            </div>
-        </div>
-        
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <!-- WHAT'S INCLUDED -->
+    <section id="que-incluye" class="py-16 bg-page">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center">
-                <span class="inline-block bg-white/20 text-white px-4 py-2 rounded-full text-sm font-medium mb-6 backdrop-blur">
-                    OFERTA POR TIEMPO LIMITADO
-                </span>
-                
-                <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
-                    Accedé hoy y empezá a diseñar como un profesional
+                <h2 class="text-3xl font-extrabold text-white sm:text-4xl">
+                    Todo esto te llevás hoy
                 </h2>
-                
-                <p class="text-xl text-indigo-200 mb-8 max-w-2xl mx-auto">
-                    Unite a más de 2,500 emprendedores que ya transformaron su imagen de marca
+                <p class="mt-4 max-w-2xl text-xl text-txt-secondary mx-auto">
+                    Un arsenal completo de recursos editables para potenciar tu marca.
                 </p>
+            </div>
 
-                <!-- Price -->
-                <div class="mb-8">
-                    <p class="text-gray-300 line-through text-lg">Precio oficial: $24.000 ARS · <span class="text-gray-400">~$16 USD</span></p>
-                    <div class="flex items-center justify-center gap-4 mt-2 flex-wrap">
-                        <span class="text-5xl md:text-6xl font-bold text-white">$12.000 ARS</span>
-                        <span class="text-2xl md:text-3xl font-semibold text-indigo-200">|$8 USD</span>
-                        <span class="bg-green-400 text-green-900 px-3 py-1 rounded-full text-sm font-bold">50% OFF</span>
+            <div class="mt-12 grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+                <!-- Card 1 -->
+                <div
+                    class="flex flex-col rounded-lg shadow-lg overflow-hidden border border-card hover:border-accent-secondary transition-colors bg-card">
+                    <div class="flex-1 p-6 flex flex-col justify-between">
+                        <div class="flex-1">
+                            <div
+                                class="flex items-center justify-center h-12 w-12 rounded-md bg-page border border-accent text-accent mx-auto mb-4">
+                                <i class="fas fa-th-large text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold text-white text-center">+300 Plantillas para Feed</h3>
+                            <p class="mt-3 text-base text-txt-secondary text-center">
+                                Variedad de estilos para nunca repetir contenido. Ahorrás horas de trabajo cada semana.
+                            </p>
+                        </div>
                     </div>
-                    <p class="text-yellow-300 mt-3 font-semibold flex items-center justify-center gap-2">
-                        <i data-lucide="flame" class="w-5 h-5"></i>
-                        Oferta de lanzamiento / cupos limitados
-                    </p>
-                    <p class="text-indigo-200 mt-2 text-sm">Pago único. Acceso de por vida.</p>
                 </div>
 
-                <!-- CTA Button -->
-                <a href="https://pay.hotmart.com/O104334616V" target="_blank" class="cta-pulse inline-flex items-center justify-center gap-3 bg-white hover:bg-gray-100 text-indigo-600 font-bold py-5 px-12 rounded-2xl text-xl transition-all transform hover:scale-105 shadow-2xl">
-                    QUIERO EL PACK AHORA
-                    <i data-lucide="arrow-right" class="w-6 h-6"></i>
+                <!-- Card 2 -->
+                <div
+                    class="flex flex-col rounded-lg shadow-lg overflow-hidden border border-card hover:border-accent-secondary transition-colors bg-card">
+                    <div class="flex-1 p-6 flex flex-col justify-between">
+                        <div class="flex-1">
+                            <div
+                                class="flex items-center justify-center h-12 w-12 rounded-md bg-page border border-accent text-accent mx-auto mb-4">
+                                <i class="fas fa-mobile-alt text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold text-white text-center">Stories de Alto Impacto</h3>
+                            <p class="mt-3 text-base text-txt-secondary text-center">
+                                Diseños verticales pensados para detener el scroll, aumentar tu engagement y
+                                visualizaciones.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div
+                    class="flex flex-col rounded-lg shadow-lg overflow-hidden border border-card hover:border-accent-secondary transition-colors bg-card">
+                    <div class="flex-1 p-6 flex flex-col justify-between">
+                        <div class="flex-1">
+                            <div
+                                class="flex items-center justify-center h-12 w-12 rounded-md bg-page border border-accent text-accent mx-auto mb-4">
+                                <i class="fas fa-bullhorn text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold text-white text-center">Flyers Promocionales</h3>
+                            <p class="mt-3 text-base text-txt-secondary text-center">
+                                Plantillas optimizadas para venta. Ideales para lanzar ofertas y convertir seguidores en
+                                clientes.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div
+                    class="flex flex-col rounded-lg shadow-lg overflow-hidden border border-card hover:border-accent-secondary transition-colors bg-card">
+                    <div class="flex-1 p-6 flex flex-col justify-between">
+                        <div class="flex-1">
+                            <div
+                                class="flex items-center justify-center h-12 w-12 rounded-md bg-page border border-accent text-accent mx-auto mb-4">
+                                <i class="fas fa-book-open text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold text-white text-center">Guía de Uso Paso a Paso</h3>
+                            <p class="mt-3 text-base text-txt-secondary text-center">
+                                Tutoriales simples para que aprendas a editar en minutos, aunque nunca hayas usado
+                                Canva.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div
+                    class="flex flex-col rounded-lg shadow-lg overflow-hidden border border-card hover:border-accent-secondary transition-colors bg-card">
+                    <div class="flex-1 p-6 flex flex-col justify-between">
+                        <div class="flex-1">
+                            <div
+                                class="flex items-center justify-center h-12 w-12 rounded-md bg-page border border-accent text-accent mx-auto mb-4">
+                                <i class="fas fa-palette text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold text-white text-center">Paletas de Colores Premium</h3>
+                            <p class="mt-3 text-base text-txt-secondary text-center">
+                                Combinaciones de colores testeadas que transmiten confianza y profesionalismo.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 6 -->
+                <div
+                    class="flex flex-col rounded-lg shadow-lg overflow-hidden border border-card hover:border-accent-secondary transition-colors bg-card">
+                    <div class="flex-1 p-6 flex flex-col justify-between">
+                        <div class="flex-1">
+                            <div
+                                class="flex items-center justify-center h-12 w-12 rounded-md bg-page border border-accent text-accent mx-auto mb-4">
+                                <i class="fas fa-infinity text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold text-white text-center">Acceso de por Vida</h3>
+                            <p class="mt-3 text-base text-txt-secondary text-center">
+                                Un único pago. Actualizaciones futuras incluidas sin costo extra.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-12 text-center">
+                <a href="#oferta"
+                    class="cta-button inline-flex items-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-page bg-accent hover:bg-opacity-90 md:text-lg font-bold">
+                    Acceder al pack ahora <i class="fas fa-arrow-right ml-2 text-page"></i>
                 </a>
+            </div>
+        </div>
+    </section>
 
-                <!-- Trust badges -->
-                <div class="flex flex-wrap justify-center items-center gap-6 mt-8 text-indigo-200 text-sm">
-                    <div class="flex items-center gap-2">
-                        <i data-lucide="lock" class="w-4 h-4"></i>
-                        Pago seguro SSL
+    <!-- STORIES CAROUSEL SECTION -->
+    <section class="py-12 bg-card overflow-hidden border-y border-gray-800"> <!-- reduced padding/borders -->
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8 text-center">
+            <h2 class="text-2xl font-bold text-white mb-2">Vistazo Rápido a las Stories</h2>
+            <p class="text-txt-secondary">Diseños animados que captan la atención al instante.</p>
+        </div>
+
+        <!-- Carousel Container -->
+        <div class="relative w-full overflow-hidden">
+            <!-- Gradients for fade effect -->
+            <div class="absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-card to-transparent z-10"></div>
+            <div class="absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-card to-transparent z-10"></div>
+
+            <!-- Scrolling Track -->
+            <div class="flex animate-scroll hover:pause" style="width: max-content;">
+                <!-- Original Set -->
+                <div class="flex space-x-8 px-4">
+                    <div class="w-48 flex-shrink-0">
+                        <img src="https://habrastorage.org/webt/1m/8a/dz/1m8adzmuxstdmqpi1gdzg_mufv0.gif"
+                            class="rounded-lg shadow-lg border border-gray-700 w-full" alt="Stories 03" />
+                        <!-- removed <p> for cleaner look in carousel, or can act as caption -->
                     </div>
-                    <div class="flex items-center gap-2">
-                        <i data-lucide="credit-card" class="w-4 h-4"></i>
-                        Todas las tarjetas
+                    <div class="w-48 flex-shrink-0">
+                        <img src="https://habrastorage.org/webt/ap/4l/b8/ap4lb82bsuvbfkbbpktaji0fifu.gif"
+                            class="rounded-lg shadow-lg border border-gray-700 w-full" alt="Stories 04" />
                     </div>
-                    <div class="flex items-center gap-2">
-                        <i data-lucide="refresh-cw" class="w-4 h-4"></i>
-                        7 días de garantía
+                    <div class="w-48 flex-shrink-0">
+                        <img src="https://habrastorage.org/webt/k6/gt/r0/k6gtr0txq2krlmkf-op2v-0qjpm.gif"
+                            class="rounded-lg shadow-lg border border-gray-700 w-full" alt="Stories 05" />
+                    </div>
+                    <div class="w-48 flex-shrink-0">
+                        <img src="https://habrastorage.org/webt/uo/en/xu/uoenxu_z3m5te5amu6br51dn0yg.gif"
+                            class="rounded-lg shadow-lg border border-gray-700 w-full" alt="Stories 06" />
+                    </div>
+                    <div class="w-48 flex-shrink-0">
+                        <img src="https://habrastorage.org/webt/ea/-y/nd/ea-yndz9coiwrniicwm9vvnenco.gif"
+                            class="rounded-lg shadow-lg border border-gray-700 w-full" alt="Stories 07" />
+                    </div>
+                    <div class="w-48 flex-shrink-0">
+                        <img src="https://habrastorage.org/webt/y9/qj/qv/y9qjqvhc9x8puzg_fuqr9u11kio.gif"
+                            class="rounded-lg shadow-lg border border-gray-700 w-full" alt="Stories 08" />
+                    </div>
+                    <div class="w-48 flex-shrink-0">
+                        <img src="https://habrastorage.org/webt/jk/30/m6/jk30m6ksbva0urh5yoix7romuim.gif"
+                            class="rounded-lg shadow-lg border border-gray-700 w-full" alt="Stories 09" />
                     </div>
                 </div>
 
-                <!-- Urgency -->
-                <div class="mt-8 inline-flex items-center gap-3 bg-white/10 backdrop-blur rounded-xl px-6 py-3">
-                    <i data-lucide="clock" class="w-5 h-5 text-yellow-300"></i>
-                    <p class="text-white">Esta oferta expira en: <span class="font-bold text-yellow-300">23:59:47</span></p>
+                <!-- Duplicate Set for Infinite Scroll -->
+                <div class="flex space-x-8 px-4">
+                    <div class="w-48 flex-shrink-0">
+                        <img src="https://habrastorage.org/webt/1m/8a/dz/1m8adzmuxstdmqpi1gdzg_mufv0.gif"
+                            class="rounded-lg shadow-lg border border-gray-700 w-full" alt="Stories 03" />
+                    </div>
+                    <div class="w-48 flex-shrink-0">
+                        <img src="https://habrastorage.org/webt/ap/4l/b8/ap4lb82bsuvbfkbbpktaji0fifu.gif"
+                            class="rounded-lg shadow-lg border border-gray-700 w-full" alt="Stories 04" />
+                    </div>
+                    <div class="w-48 flex-shrink-0">
+                        <img src="https://habrastorage.org/webt/k6/gt/r0/k6gtr0txq2krlmkf-op2v-0qjpm.gif"
+                            class="rounded-lg shadow-lg border border-gray-700 w-full" alt="Stories 05" />
+                    </div>
+                    <div class="w-48 flex-shrink-0">
+                        <img src="https://habrastorage.org/webt/uo/en/xu/uoenxu_z3m5te5amu6br51dn0yg.gif"
+                            class="rounded-lg shadow-lg border border-gray-700 w-full" alt="Stories 06" />
+                    </div>
+                    <div class="w-48 flex-shrink-0">
+                        <img src="https://habrastorage.org/webt/ea/-y/nd/ea-yndz9coiwrniicwm9vvnenco.gif"
+                            class="rounded-lg shadow-lg border border-gray-700 w-full" alt="Stories 07" />
+                    </div>
+                    <div class="w-48 flex-shrink-0">
+                        <img src="https://habrastorage.org/webt/y9/qj/qv/y9qjqvhc9x8puzg_fuqr9u11kio.gif"
+                            class="rounded-lg shadow-lg border border-gray-700 w-full" alt="Stories 08" />
+                    </div>
+                    <div class="w-48 flex-shrink-0">
+                        <img src="https://habrastorage.org/webt/jk/30/m6/jk30m6ksbva0urh5yoix7romuim.gif"
+                            class="rounded-lg shadow-lg border border-gray-700 w-full" alt="Stories 09" />
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- FAQ -->
-    <section class="py-16 md:py-24 bg-white">
-        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-gray-900 text-center mb-12">Preguntas frecuentes</h2>
-            
-            <div class="space-y-4">
-                <details class="group bg-gray-50 rounded-xl">
-                    <summary class="flex items-center justify-between p-6 cursor-pointer">
-                        <span class="font-semibold text-gray-900">¿Necesito Canva Pro para usar las plantillas?</span>
-                        <i data-lucide="chevron-down" class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform"></i>
-                    </summary>
-                    <p class="px-6 pb-6 text-gray-600">No. Todas las plantillas funcionan perfectamente con la versión gratuita de Canva. Algunos elementos premium pueden requerir sustitución, pero te damos alternativas gratuitas.</p>
-                </details>
-                
-                <details class="group bg-gray-50 rounded-xl">
-                    <summary class="flex items-center justify-between p-6 cursor-pointer">
-                        <span class="font-semibold text-gray-900">¿Cómo recibo el producto después de comprar?</span>
-                        <i data-lucide="chevron-down" class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform"></i>
-                    </summary>
-                    <p class="px-6 pb-6 text-gray-600">Inmediatamente después del pago recibís un email con un PDF que contiene todos los links de acceso a las plantillas en Canva. También podés descargarlo desde tu cuenta de Hotmart.</p>
-                </details>
-                
-                <details class="group bg-gray-50 rounded-xl">
-                    <summary class="flex items-center justify-between p-6 cursor-pointer">
-                        <span class="font-semibold text-gray-900">¿Puedo usar los diseños para mis clientes?</span>
-                        <i data-lucide="chevron-down" class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform"></i>
-                    </summary>
-                    <p class="px-6 pb-6 text-gray-600">Sí. Tu compra incluye licencia de uso comercial. Podés usar las plantillas para tu negocio y para crear contenido para tus clientes sin límites.</p>
-                </details>
-                
-                <details class="group bg-gray-50 rounded-xl">
-                    <summary class="flex items-center justify-between p-6 cursor-pointer">
-                        <span class="font-semibold text-gray-900">¿Hay actualizaciones incluidas?</span>
-                        <i data-lucide="chevron-down" class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform"></i>
-                    </summary>
-                    <p class="px-6 pb-6 text-gray-600">Sí. Cuando agregamos nuevas plantillas al pack, vos las recibís automáticamente sin costo adicional. Tu acceso es de por vida.</p>
-                </details>
+    <!-- REDES SOCIALES PLUS SECTION -->
+    <section class="py-16 bg-page border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <span
+                    class="inline-block py-1 px-3 rounded-full bg-card text-accent text-xs font-semibold tracking-wide uppercase mb-4 border border-card">
+                    ✨ Nuevo Contenido
+                </span>
+                <h2 class="text-3xl font-extrabold text-white sm:text-4xl">
+                    REDES SOCIALES PLUS
+                </h2>
+                <p class="mt-4 max-w-2xl text-xl text-txt-secondary mx-auto">
+                    Una colección exclusiva de diseños animados listos para destacar en cualquier plataforma.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                <!-- GIF 01 -->
+                <div
+                    class="group relative rounded-xl overflow-hidden bg-card border border-gray-800 hover:border-accent transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,229,168,0.1)]">
+                    <img src="./assets/gifs/Miscellaneous 01.gif" alt="Diseño Redes Sociales Plus 01"
+                        class="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-500">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                        <span class="text-white font-medium text-sm"> 01</span>
+                    </div>
+                </div>
+                <!-- GIF 02 -->
+                <div
+                    class="group relative rounded-xl overflow-hidden bg-card border border-gray-800 hover:border-accent transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,229,168,0.1)]">
+                    <img src="./assets/gifs/Miscellaneous 02.gif" alt="Diseño Redes Sociales Plus 02"
+                        class="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-500">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                        <span class="text-white font-medium text-sm"> 02</span>
+                    </div>
+                </div>
+                <!-- GIF 03 -->
+                <div
+                    class="group relative rounded-xl overflow-hidden bg-card border border-gray-800 hover:border-accent transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,229,168,0.1)]">
+                    <img src="./assets/gifs/Miscellaneous 03.gif" alt="Diseño Redes Sociales Plus 03"
+                        class="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-500">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                        <span class="text-white font-medium text-sm"> 03</span>
+                    </div>
+                </div>
+                <!-- GIF 04 -->
+                <div
+                    class="group relative rounded-xl overflow-hidden bg-card border border-gray-800 hover:border-accent transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,229,168,0.1)]">
+                    <img src="./assets/gifs/Miscellaneous 04.gif" alt="Diseño Redes Sociales Plus 04"
+                        class="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-500">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                        <span class="text-white font-medium text-sm"> 04</span>
+                    </div>
+                </div>
+                <!-- GIF 05 -->
+                <div
+                    class="group relative rounded-xl overflow-hidden bg-card border border-gray-800 hover:border-accent transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,229,168,0.1)]">
+                    <img src="./assets/gifs/Miscellaneous 05.gif" alt="Diseño Redes Sociales Plus 05"
+                        class="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-500">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                        <span class="text-white font-medium text-sm"> 05</span>
+                    </div>
+                </div>
+                <!-- GIF 06 -->
+                <div
+                    class="group relative rounded-xl overflow-hidden bg-card border border-gray-800 hover:border-accent transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,229,168,0.1)]">
+                    <img src="./assets/gifs/Miscellaneous 06.gif" alt="Diseño Redes Sociales Plus 06"
+                        class="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-500">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                        <span class="text-white font-medium text-sm"> 06</span>
+                    </div>
+                </div>
+                <!-- GIF 07 -->
+                <div
+                    class="group relative rounded-xl overflow-hidden bg-card border border-gray-800 hover:border-accent transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,229,168,0.1)]">
+                    <img src="./assets/gifs/Miscellaneous 07.gif" alt="Diseño Redes Sociales Plus 07"
+                        class="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-500">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                        <span class="text-white font-medium text-sm"> 07</span>
+                    </div>
+                </div>
+                <!-- GIF 08 -->
+                <div
+                    class="group relative rounded-xl overflow-hidden bg-card border border-gray-800 hover:border-accent transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,229,168,0.1)]">
+                    <img src="./assets/gifs/Miscellaneous 08.gif" alt="Diseño Redes Sociales Plus 08"
+                        class="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-500">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                        <span class="text-white font-medium text-sm"> 08</span>
+                    </div>
+                </div>
+                <!-- GIF 09 -->
+                <div
+                    class="group relative rounded-xl overflow-hidden bg-card border border-gray-800 hover:border-accent transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,229,168,0.1)]">
+                    <img src="./assets/gifs/Miscellaneous 09.gif" alt="Diseño Redes Sociales Plus 09"
+                        class="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-500">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                        <span class="text-white font-medium text-sm"> 09</span>
+                    </div>
+                </div>
+                <!-- GIF 10 -->
+                <div
+                    class="group relative rounded-xl overflow-hidden bg-card border border-gray-800 hover:border-accent transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,229,168,0.1)]">
+                    <img src="./assets/gifs/Miscellaneous 10.gif" alt="Diseño Redes Sociales Plus 10"
+                        class="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-500">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                        <span class="text-white font-medium text-sm"> 10</span>
+                    </div>
+                </div>
+                <!-- GIF 11 -->
+                <div
+                    class="group relative rounded-xl overflow-hidden bg-card border border-gray-800 hover:border-accent transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,229,168,0.1)]">
+                    <img src="./assets/gifs/Miscellaneous 11.gif" alt="Diseño Redes Sociales Plus 11"
+                        class="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-500">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                        <span class="text-white font-medium text-sm"> 11</span>
+                    </div>
+                </div>
+                <!-- GIF 12 -->
+                <div
+                    class="group relative rounded-xl overflow-hidden bg-card border border-gray-800 hover:border-accent transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,229,168,0.1)]">
+                    <img src="./assets/gifs/Miscellaneous 12.gif" alt="Diseño Redes Sociales Plus 12"
+                        class="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-500">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                        <span class="text-white font-medium text-sm"> 12</span>
+                    </div>
+                </div>
+                <!-- GIF 13 -->
+                <div
+                    class="group relative rounded-xl overflow-hidden bg-card border border-gray-800 hover:border-accent transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,229,168,0.1)]">
+                    <img src="./assets/gifs/Miscellaneous 13.gif" alt="Diseño Redes Sociales Plus 13"
+                        class="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-500">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                        <span class="text-white font-medium text-sm"> 13</span>
+                    </div>
+                </div>
+                <!-- GIF 14 -->
+                <div
+                    class="group relative rounded-xl overflow-hidden bg-card border border-gray-800 hover:border-accent transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,229,168,0.1)]">
+                    <img src="./assets/gifs/Miscellaneous 14.gif" alt="Diseño Redes Sociales Plus 14"
+                        class="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-500">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                        <span class="text-white font-medium text-sm"> 14</span>
+                    </div>
+                </div>
+                <!-- GIF 15 -->
+                <div
+                    class="group relative rounded-xl overflow-hidden bg-card border border-gray-800 hover:border-accent transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,229,168,0.1)]">
+                    <img src="./assets/gifs/Miscellaneous 15.gif" alt="Diseño Redes Sociales Plus 15"
+                        class="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-500">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                        <span class="text-white font-medium text-sm"> 15</span>
+                    </div>
+                </div>
+                <!-- GIF 16 -->
+                <div
+                    class="group relative rounded-xl overflow-hidden bg-card border border-gray-800 hover:border-accent transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,229,168,0.1)]">
+                    <img src="./assets/gifs/Miscellaneous 16.gif" alt="Diseño Redes Sociales Plus 16"
+                        class="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-500">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                        <span class="text-white font-medium text-sm"> 16</span>
+                    </div>
+                </div>
+                <!-- GIF 17 -->
+                <div
+                    class="group relative rounded-xl overflow-hidden bg-card border border-gray-800 hover:border-accent transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,229,168,0.1)]">
+                    <img src="./assets/gifs/Miscellaneous 17.gif" alt="Diseño Redes Sociales Plus 17"
+                        class="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-500">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                        <span class="text-white font-medium text-sm"> 17</span>
+                    </div>
+                </div>
+                <!-- GIF 18 -->
+                <div
+                    class="group relative rounded-xl overflow-hidden bg-card border border-gray-800 hover:border-accent transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,229,168,0.1)]">
+                    <img src="./assets/gifs/Miscellaneous 18.gif" alt="Diseño Redes Sociales Plus 18"
+                        class="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-500">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                        <span class="text-white font-medium text-sm"> 18</span>
+                    </div>
+                </div>
+                <!-- GIF 19 -->
+                <div
+                    class="group relative rounded-xl overflow-hidden bg-card border border-gray-800 hover:border-accent transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,229,168,0.1)]">
+                    <img src="./assets/gifs/Miscellaneous 19.gif" alt="Diseño Redes Sociales Plus 19"
+                        class="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-500">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                        <span class="text-white font-medium text-sm"> 19</span>
+                    </div>
+                </div>
+                <!-- GIF 20 -->
+                <div
+                    class="group relative rounded-xl overflow-hidden bg-card border border-gray-800 hover:border-accent transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,229,168,0.1)]">
+                    <img src="./assets/gifs/Miscellaneous 20.gif" alt="Diseño Redes Sociales Plus 20"
+                        class="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-500">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                        <span class="text-white font-medium text-sm"> 20</span>
+                    </div>
+                </div>
+                <div class="col-span-full text-center mt-12">
+                    <p class="text-xl md:text-2xl text-gray-400 font-medium italic">
+                        ¡Todo eso y mucho más! <span class="text-accent">(+400 archivos disponibles)</span>
+                    </p>
+                </div>
+
+
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="py-12 bg-gray-900 text-gray-400">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
-                <div class="flex items-center gap-2">
-                    <i data-lucide="palette" class="w-6 h-6 text-indigo-400"></i>
-                    <span class="font-display font-bold text-xl text-white">Canva<span class="text-indigo-400">Pro</span>Pack</span>
+    <!-- BENEFITS SECTION -->
+    <section class="py-16 bg-card text-txt-primary">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
+                <div>
+                    <h2 class="text-3xl font-extrabold tracking-tight sm:text-4xl mb-6 text-white">
+                        Por qué elegir MadMakers
+                    </h2>
+
+                    <div class="mt-8 space-y-6">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0">
+                                <i class="fas fa-check-circle text-accent text-2xl"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-xl font-medium text-white">Ahorrá Tiempo Valioso</h3>
+                                <p class="mt-2 text-txt-secondary">Dejá de luchar con el diseño. Tené tus posts listos
+                                    en 5 minutos.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0">
+                                <i class="fas fa-check-circle text-accent text-2xl"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-xl font-medium text-white">Resultados Profesionales</h3>
+                                <p class="mt-2 text-txt-secondary">Tu marca se verá como si hubieras contratado una
+                                    agencia, pero por una fracción del costo.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0">
+                                <i class="fas fa-check-circle text-accent text-2xl"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-xl font-medium text-white">Sin Conocimientos Técnicos</h3>
+                                <p class="mt-2 text-txt-secondary">100% editable en Canva Gratuito. Arrastrá, soltá y
+                                    listo.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0">
+                                <i class="fas fa-check-circle text-accent text-2xl"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-xl font-medium text-white">Un solo pago, uso ilimitado</h3>
+                                <p class="mt-2 text-txt-secondary">Sin suscripciones mensuales. El pack es tuyo para
+                                    siempre.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="flex items-center gap-6 text-sm">
-                    <a href="#" class="hover:text-white transition-colors">Términos de uso</a>
-                    <a href="#" class="hover:text-white transition-colors">Privacidad</a>
-                    <a href="#" class="hover:text-white transition-colors">Contacto</a>
+                <!-- Visual for Benefits -->
+                <div class="mt-10 lg:mt-0 flex justify-center">
+
+                    <div class="bg-page rounded-xl p-6 shadow-2xl w-full max-w-md border border-gray-800 text-center">
+                        <img src="https://i.postimg.cc/JhQ24ZZC/unwatermarked-Gemini-Generated-Image-3dpfs33dpfs33dpf.png"
+                            alt="Comparativa de feed" class="rounded-lg mb-4 w-full shadow-lg">
+                        <p class="text-txt-secondary">Tu antes vs. después</p>
+                    </div>
+
                 </div>
             </div>
-            <div class="mt-8 pt-8 border-t border-gray-800 text-center text-sm">
-                <p>© 2024 CanvaProPack. Todos los derechos reservados.</p>
-                <p class="mt-2">Este sitio no está afiliado con Canva. Canva es marca registrada de Canva Pty Ltd.</p>
+        </div>
+    </section>
+
+    <!-- SOCIAL PROOF / TESTIMONIALS -->
+    <section class="py-16 bg-page">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-extrabold text-center text-white sm:text-4xl mb-12">
+                Lo que dicen quienes ya lo usan
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-card p-6 rounded-lg shadow-sm border border-gray-800">
+                    <div class="flex items-center mb-4">
+                        <div
+                            class="h-10 w-10 rounded-full bg-accent-secondary flex items-center justify-center text-white font-bold">
+                            L</div>
+                        <div class="ml-3">
+                            <p class="text-sm font-medium text-white">Laura M.</p>
+                            <div class="flex text-yellow-400 text-xs">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                    class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-txt-secondary italic">"Me salvó la vida. Antes tardaba horas en hacer un post, ahora
+                        en 5 minutos tengo la semana planificada."</p>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="bg-card p-6 rounded-lg shadow-sm border border-gray-800">
+                    <div class="flex items-center mb-4">
+                        <div
+                            class="h-10 w-10 rounded-full bg-accent-secondary flex items-center justify-center text-white font-bold">
+                            M</div>
+                        <div class="ml-3">
+                            <p class="text-sm font-medium text-white">Marcos D.</p>
+                            <div class="flex text-yellow-400 text-xs">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                    class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-txt-secondary italic">"La calidad de los diseños es increíble. Mi perfil de Instagram
+                        cambió completamente y mis ventas subieron."</p>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="bg-card p-6 rounded-lg shadow-sm border border-gray-800">
+                    <div class="flex items-center mb-4">
+                        <div
+                            class="h-10 w-10 rounded-full bg-accent-secondary flex items-center justify-center text-white font-bold">
+                            S</div>
+                        <div class="ml-3">
+                            <p class="text-sm font-medium text-white">Sofía R.</p>
+                            <div class="flex text-yellow-400 text-xs">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                    class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-txt-secondary italic">"Súper fácil de usar. Lo compré, me llegó el link y en 10
+                        minutos ya estaba editando. Recomendadísimo."</p>
+                </div>
+            </div>
+
+            <div
+                class="mt-12 flex justify-center gap-6 flex-wrap opacity-75 grayscale hover:grayscale-0 transition-all duration-300">
+                <!-- Trust Badges -->
+                <div class="flex items-center space-x-2 text-txt-secondary">
+                    <i class="fas fa-lock text-green-500"></i>
+                    <span class="font-semibold text-sm">Pago Seguro con Hotmart</span>
+                </div>
+                <div class="flex items-center space-x-2 text-txt-secondary">
+                    <i class="fas fa-bolt text-yellow-500"></i>
+                    <span class="font-semibold text-sm">Acceso Inmediato</span>
+                </div>
+                <div class="flex items-center space-x-2 text-txt-secondary">
+                    <i class="fas fa-check-double text-blue-500"></i>
+                    <span class="font-semibold text-sm">Uso Comercial Permitido</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- OFFER & PRICING -->
+    <section id="oferta" class="py-16 bg-page overflow-hidden relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="bg-card rounded-3xl shadow-2xl overflow-hidden border border-gray-800">
+                <div class="grid grid-cols-1 lg:grid-cols-2">
+                    <div class="p-10 md:p-16 text-white flex flex-col justify-center">
+                        <h3 class="text-3xl font-bold mb-4">¡Oferta Especial Limitada!</h3>
+                        <p class="text-txt-secondary mb-6 text-lg">
+                            Accedé hoy a la colección completa de MadMakers por una fracción de su valor real.
+                        </p>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-center text-txt-primary"><i class="fas fa-check text-accent mr-3"></i>
+                                +300 Plantillas Editables</li>
+                            <li class="flex items-center text-txt-primary"><i class="fas fa-check text-accent mr-3"></i>
+                                Stories, Flyers y Más</li>
+                            <li class="flex items-center text-txt-primary"><i class="fas fa-check text-accent mr-3"></i>
+                                Actualizaciones de por vida</li>
+                        </ul>
+
+                        <div class="mt-4">
+                            <p class="text-sm text-txt-secondary uppercase tracking-wide font-semibold">Valor Real:
+                                <span class="line-through text-red-400 decoration-2 decoration-red-400">$65.000
+                                    ARS</span>
+                            </p>
+                            <div class="flex items-baseline mt-2">
+                                <span class="text-5xl font-extrabold text-white">$12.000</span>
+                                <span class="text-xl text-txt-secondary ml-2">ARS</span>
+                            </div>
+                            <p class="text-xs text-txt-secondary mt-1">*Precio final, un único pago.</p>
+                        </div>
+
+                        <div class="mt-8">
+                            <a href="https://pay.hotmart.com/O104334616V?bid=1770560080922"
+                                class="cta-button block w-full text-center bg-accent text-page font-bold text-xl py-4 rounded-lg hover:bg-opacity-90 transition-colors shadow-lg uppercase tracking-wide">
+                                ¡SÍ, QUIERO EL PACK YA!
+                            </a>
+                            <p class="text-center text-xs text-txt-secondary mt-3"><i class="fas fa-lock"></i> Compra
+                                100% Segura</p>
+                        </div>
+                    </div>
+
+                    <div
+                        class="bg-[#12161c] p-10 md:p-16 flex flex-col justify-center items-center text-center relative border-l border-gray-800">
+                        <!-- Guarantee Badge -->
+                        <div class="mb-6">
+                            <div class="bg-page rounded-full p-6 inline-block shadow-xl border border-gray-800">
+                                <i class="fas fa-shield-alt text-5xl text-accent-secondary"></i>
+                            </div>
+                        </div>
+                        <h4 class="text-2xl font-bold text-white mb-2">Garantía de 7 Días</h4>
+                        <p class="text-txt-secondary mb-6">
+                            Si el pack no cumple con tus expectativas, te devolvemos el 100% de tu dinero. Sin
+                            preguntas, sin riesgos.
+                        </p>
+                        <div class="border-t border-gray-800 w-full pt-6 mt-2">
+                            <p class="text-white font-medium">¿Qué estás esperando?</p>
+                            <p class="text-txt-secondary text-sm mt-1">Llevate el diseño profesional a tu negocio hoy.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-card border-t border-gray-800 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center">
+            <div class="mb-4 md:mb-0">
+                <span class="text-xl font-bold text-white">MadMakers</span>
+                <p class="text-sm text-txt-secondary mt-1">© 2026 MadMakers. Todos los derechos reservados.</p>
+            </div>
+            <div class="flex space-x-6">
+                <a href="#" class="text-txt-secondary hover:text-white">
+                    <span class="sr-only">Instagram</span>
+                    <i class="fab fa-instagram text-xl"></i>
+                </a>
+                <a href="#" class="text-txt-secondary hover:text-white">
+                    <span class="sr-only">Facebook</span>
+                    <i class="fab fa-facebook text-xl"></i>
+                </a>
+                <a href="mailto:soporte@madmakers.com" class="text-txt-secondary hover:text-white flex items-center">
+                    <i class="fas fa-envelope text-xl mr-2"></i>
+                    <span class="text-sm">Soporte</span>
+                </a>
             </div>
         </div>
     </footer>
 
-    <script>
-        // Initialize Lucide icons
-        lucide.createIcons();
-
-        // Sticky CTA visibility
-        const stickyCta = document.getElementById('stickyCta');
-        let lastScroll = 0;
-
-        window.addEventListener('scroll', () => {
-            const currentScroll = window.pageYOffset;
-            if (currentScroll > 500) {
-                stickyCta.classList.add('visible');
-            } else {
-                stickyCta.classList.remove('visible');
-            }
-            lastScroll = currentScroll;
-        });
-
-        // Smooth scroll for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Countdown timer
-        function updateCountdown() {
-            const now = new Date();
-            const endOfDay = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 23, 59, 59);
-            const diff = endOfDay - now;
-            
-            const hours = Math.floor(diff / (1000 * 60 * 60));
-            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-            
-            const countdownEl = document.querySelector('.countdown-number');
-            if (countdownEl) {
-                countdownEl.textContent = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
-            }
-        }
-        setInterval(updateCountdown, 1000);
-        updateCountdown();
-    </script>
 </body>
+
 </html>
